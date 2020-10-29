@@ -43,7 +43,7 @@
       }
 
       *:focus {
-        outline: 3pt solid #ff9900;
+        outline: 3pt solid #70A9A1;
       }
 
       .app {
@@ -60,7 +60,6 @@
       }
       .block.dark {
         background-color: #70A9A1;
-        background-color: #d8973c;
         color: #273e47;
       }
       .block.darker {
@@ -128,7 +127,7 @@
       }
 
       a:hover {
-        color: #1F363D;
+        color: #CFE0C3;
       }
 
       .darker a {
@@ -164,11 +163,9 @@
               A beautiful view from Bukollen
             </figcaption>
           </figure>
-          <button type="button">Button</button> <a href="/">Link</a>
         </div>
       </div>
       <div class="block darker">
-        <div class="container"><button type="button">Button</button> <a href="/">Link</a></div>
       </div>
       <div class="block">
         <div class="container">
@@ -189,24 +186,28 @@
               style="border: 1pt solid #5fa34480; display: flex; min-width: 200px; height: 200px; background-color: #1F363D;"
             ></div>
           </div>
-
-          <div>
-            <img class="lzy_img" src="/bukollen1.svg" data-src="/bukollen1.JPG" />
-          </div>
-          <div>
-            <img class="lzy_img" src="/bukollen2.svg" data-src="/bukollen2.JPG" />
-          </div>
-          <div>
-            <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
-          </div>
-          <div>
-            <video controls autoplay="true" preload="auto" loop="true">
-              <source src="video.mp4" type="video/mp4">
-            </video>
-          </div>
-          
         </div>
       </div>
+      <div class="container">
+        <div style="padding: 48px 0">
+          <img src="/bukollen1.jpg" loading="lazy" />
+        </div>
+        <div style="padding: 48px 0">
+          <img class="lzy_img" src="/bukollen1.svg" data-src="/bukollen1.JPG" />
+        </div>
+        <div style="padding: 48px 0">
+          <img class="lzy_img" src="/bukollen2.svg" data-src="/bukollen2.JPG" />
+        </div>
+        <div style="padding: 48px 0">
+          <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
+        </div>
+        <div style="padding: 48px 0">
+          <video playsinline autoplay muted loop poser="bukollen1.sv" >
+            <source src="video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
     </div>
     <script>
       window.addEventListener('load', event => {
