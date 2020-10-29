@@ -173,6 +173,16 @@
               style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #273E47;"
             ></div>
           </div>
+
+          <div>
+            <img class="lzy_img" src="/bukollen1.JPG" data-src="/bukollen1.JPG" />
+          </div>
+          <div>
+            <img class="lzy_img" src="/bukollen2.JPG" data-src="/bukollen2.JPG" />
+          </div>
+          <div>
+            <img class="lzy_img" src="/bukollen3.JPG" data-src="/bukollen3.JPG" />
+          </div>
         </div>
       </div>
     </div>
@@ -213,6 +223,20 @@
           img.setAttribute('srcset', datasrcset4g);
           img.setAttribute('sizes', img.getAttribute('data-sizes'));
         }
+
+        const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              console.log('lazy loading ', lazyImage);
+              lazyImage.src = lazyImage.dataset.src;
+            }
+          });
+        });
+        const arr = document.querySelectorAll('img.lzy_img');
+        arr.forEach(v => {
+          imageObserver.observe(v);
+        });
       });
     </script>
   </body>
