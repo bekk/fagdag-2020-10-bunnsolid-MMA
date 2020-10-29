@@ -28,8 +28,17 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+      }
+      .block {
         padding-top: 72px;
         padding-bottom: 48px;
+        width: 100%;
+      }
+      .block.dark {
+        background-color: #d8973c;
+      }
+      .block.darker {
+        background-color: #bd632f;
       }
       .container {
         width: 70vw;
@@ -41,10 +50,14 @@
         margin-bottom: 32px;
         line-height: 52px;
         font-weight: 200;
+        width: 100%;
+        display: block;
+        color: #273e47;
       }
 
       img {
         max-width: 70vw;
+        max-height: 50vh;
       }
       button {
         background-color: #bd632f;
@@ -53,6 +66,11 @@
         color: white;
         border: 2pt solid transparent;
         box-shadow: none;
+      }
+
+      .darker button {
+        background-color: #d8c99b;
+        color: black;
       }
 
       button.secondary {
@@ -69,31 +87,47 @@
       a:hover {
         color: #273e47;
       }
+
+      .darker a {
+        color: #d8c99b;
+      }
     </style>
   </head>
   <body>
     <div class="app">
-      <div class="container">
-        <h1>MMA</h1>
-        <button type="button">Button</button> <a href="/">Link</a>
-        <img src="/bukollen1.JPG" />
+      <div class="block">
+        <div class="container">
+          <h1>MMA</h1>
+          <button type="button">Button</button> <a href="/">Link</a>
+        </div>
+      </div>
+      <div class="block dark">
+        <div class="container"><button type="button">Button</button> <a href="/">Link</a></div>
+      </div>
+      <div class="block darker">
+        <div class="container"><button type="button">Button</button> <a href="/">Link</a></div>
+      </div>
+      <div class="block">
+        <div class="container">
+          <img src="/bukollen1-crap.jpg" />
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-          <div
-            style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #A4243B;"
-          ></div>
-          <div
-            style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #D8C99B;"
-          ></div>
-          <div
-            style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #D8973C;"
-          ></div>
-          <div
-            style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #BD632F;"
-          ></div>
-          <div
-            style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #273E47;"
-          ></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div
+              style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #A4243B;"
+            ></div>
+            <div
+              style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #D8C99B;"
+            ></div>
+            <div
+              style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #D8973C;"
+            ></div>
+            <div
+              style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #BD632F;"
+            ></div>
+            <div
+              style="border: 1pt solid rgba(216, 151, 60, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #273E47;"
+            ></div>
+          </div>
         </div>
       </div>
     </div>
