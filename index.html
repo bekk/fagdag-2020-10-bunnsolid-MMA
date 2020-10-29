@@ -8,6 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="application-name" content="MMA" />
+    <meta name="description" content="A lovely site for bukollen" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:description" content="A lovely site for bukollen" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="MMA" />
+    <meta name="twitter:title" content="MMA" />
+    <meta name="twitter:description" content="A lovely site for bukollen" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#273e47" />
     <link
       href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEhEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP7/AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
       rel="icon"
@@ -32,6 +42,10 @@
         color: white;
       }
 
+      *:focus {
+        outline: 3pt solid #ff9900;
+      }
+
       .app {
         height: 100%;
         display: flex;
@@ -41,9 +55,13 @@
         padding-top: 72px;
         padding-bottom: 48px;
         width: 100%;
+        background-color: #273e47;
+        color: #d8c99b;
       }
       .block.dark {
         background-color: #70A9A1;
+        background-color: #d8973c;
+        color: #273e47;
       }
       .block.darker {
         background-color: #40798C;
@@ -51,6 +69,15 @@
       .container {
         width: 70vw;
         margin: 0 auto;
+      }
+
+      figure,
+      p {
+        margin-bottom: 2rem;
+      }
+
+      p {
+        max-width: 70ch;
       }
 
       h1 {
@@ -64,10 +91,12 @@
         color: white;
       }
 
-      img {
-        max-width: 640px;
-        max-height: 100vh;
+      img.main {
+        max-height: 640px;
         width: 100%;
+        display: block;
+        object-fit: contain;
+        max-width: 426.67px;
       }
       video {
         width: 100%;
@@ -94,7 +123,8 @@
       a:visited,
       a:active,
       a {
-        color: #9EC1A3;
+        color: #a4243b;
+        font-weight: 500;
       }
 
       a:hover {
@@ -104,6 +134,12 @@
       .darker a {
         color: #CFE0C3;
       }
+      .block.dark a {
+        color: #a4243b;
+      }
+      .block.darker a {
+        color: #d8c99b;
+      }
     </style>
   </head>
   <body>
@@ -112,33 +148,30 @@
         <div class="container">
           <h1>MMA</h1>
           <p>Faggruppefagdag på 10k</p>
-          <button type="button">Button</button> <a href="/">Link</a>
+          <a href="https://github.com/bekk/fagdag-2020-10-bunnsolid-MMA">Github repository</a>
         </div>
       </div>
       <div class="block dark">
-        <div class="container"><button type="button">Button</button> <a href="/">Link</a></div>
+        <div class="container">
+          <figure>
+            <img
+              alt="A view from a mountain hillside"
+              class="main"
+              data-sizes="(max-width: 400px) 360px, (max-width: 800px) 768px, (max-width: 1400px) 1366px, (max-width: 2000px) 1920px, (max-width: 2800px) 2560px"
+              src="/bukollen1.svg"
+            />
+            <figcaption>
+              A beautiful view from Bukollen
+            </figcaption>
+          </figure>
+          <button type="button">Button</button> <a href="/">Link</a>
+        </div>
       </div>
       <div class="block darker">
         <div class="container"><button type="button">Button</button> <a href="/">Link</a></div>
       </div>
       <div class="block">
         <div class="container">
-          <div class="noImage">
-            <img
-              id="main-image"
-              data-srcset="
-                /bukollen1@0.5x.jpg  360w,
-                /bukollen1@1x.jpg    768w,
-                /bukollen1@2x.jpg   1366w,
-                /bukollen1@3x.jpg   1920w,
-                /bukollen1@4x.jpg   2560w
-              "
-              data-sizes="(max-width: 400px) 360px, (max-width: 800px) 768px, (max-width: 1400px) 1366px, (max-width: 2000px) 1920px, (max-width: 2800px) 2560px"
-              src="/bukollen1.svg"
-           />
-          </div>
-          
-
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div
               style="border: 1pt solid rgba(95, 163, 68, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #9EC1A3;"
@@ -153,30 +186,18 @@
               style="border: 1pt solid rgba(95, 163, 68, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #40798C;"
             ></div>
             <div
-              style="border: 1pt solid rgba(95, 163, 68, 0.5); display: flex; min-width: 200px; height: 200px; background-color: #1F363D;"
+              style="border: 1pt solid #5fa34480; display: flex; min-width: 200px; height: 200px; background-color: #1F363D;"
             ></div>
           </div>
 
           <div>
-           <img
-            class="lzy_img"
-            src="/bukollen1.JPG"
-            data-src="/bukollen1.JPG"
-          /> 
+            <img class="lzy_img" src="/bukollen1.JPG" data-src="/bukollen1.JPG" />
           </div>
           <div>
-            <img
-              class="lzy_img"
-              src="/bukollen2.JPG"
-              data-src="/bukollen2.JPG"
-            />
+            <img class="lzy_img" src="/bukollen2.JPG" data-src="/bukollen2.JPG" />
           </div>
           <div>
-           <img
-            class="lzy_img"
-            src="/bukollen3.JPG"
-            data-src="/bukollen3.JPG"
-           /> 
+            <img class="lzy_img" src="/bukollen3.JPG" data-src="/bukollen3.JPG" />
           </div>
           <div>
             <video controls autoplay="true" preload="auto" loop="true">
@@ -191,32 +212,54 @@
       window.addEventListener('load', event => {
         console.log('page is fully loaded');
 
-        const img = document.getElementById('main-image');
-        img.setAttribute('srcset', img.getAttribute('data-srcset'));
-        img.setAttribute('sizes', img.getAttribute('data-sizes'));
+        const img = document.querySelector('img.main');
+
+        var html = document.documentElement;
+        var fonts = document.createElement('link');
+        fonts.href = '/fonts.css';
+        fonts.rel = 'stylesheet';
+
+        document.head.appendChild(fonts);
+        let connectionType = '4g';
+
+        const datasrcset2g =
+          '/bukollen1@0.5x.jpg  360w,/bukollen1@1x.jpg 768w,/bukollen1@1x.jpg 1366w,/bukollen1@1x.jpg 1920w,/bukollen1@1x.jpg 2560w';
+        const datasrcset3g =
+          '/bukollen1@0.5x.jpg  360w,/bukollen1@1x.jpg 768w,/bukollen1@2x.jpg 1366w,/bukollen1@2x.jpg 1920w,/bukollen1@2x.jpg 2560w';
+        const datasrcset4g =
+          '/bukollen1@0.5x.jpg  360w,/bukollen1@1x.jpg 768w,/bukollen1@2x.jpg 1366w,/bukollen1@3x.jpg 1920w,/bukollen1@4x.jpg 2560w';
+        if (navigator.connection) {
+          connectionType = navigator.connection.effectiveType;
+
+          // img.setAttribute('srcset', img.getAttribute(`data-srcset-${connectionType}`));
+
+          if (connectionType === '3g') {
+            img.setAttribute('srcset', datasrcset3g);
+          } else if (connectionType === '2g') {
+            img.setAttribute('srcset', datasrcset2g);
+          } else {
+            img.setAttribute('srcset', datasrcset4g);
+          }
+          img.setAttribute('sizes', img.getAttribute('data-sizes'));
+        } else {
+          img.setAttribute('srcset', datasrcset4g);
+          img.setAttribute('sizes', img.getAttribute('data-sizes'));
+        }
+
+        const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              console.log('lazy loading ', lazyImage);
+              lazyImage.src = lazyImage.dataset.src;
+            }
+          });
+        });
+        const arr = document.querySelectorAll('img.lzy_img');
+        arr.forEach(v => {
+          imageObserver.observe(v);
+        });
       });
-      var html = document.documentElement;
-      var fonts = document.createElement('link');
-      fonts.href = '/fonts.css';
-      fonts.rel = 'stylesheet';
-
-      document.head.appendChild(fonts);
-
-      document.addEventListener("DOMContentLoaded", function() {
-            const imageObserver = new IntersectionObserver((entries, imgObserver) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const lazyImage = entry.target
-                        console.log("lazy loading ", lazyImage)
-                        lazyImage.src = lazyImage.dataset.src
-                    }
-                })
-            });
-            const arr = document.querySelectorAll('img.lzy_img')
-            arr.forEach((v) => {
-                imageObserver.observe(v);
-            })
-        })
     </script>
   </body>
 </html>
