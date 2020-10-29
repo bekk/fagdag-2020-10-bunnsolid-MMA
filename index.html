@@ -96,6 +96,22 @@
         display: block;
         object-fit: contain;
         max-width: 426.67px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      }
+
+      .js img {
+        filter: blur(5px) grayscale(80%) brightness(100%);
+      }
+
+      img.is-loading {
+        filter: none;
+      }
+      .js img.is-loading {
+        filter: blur(0) grayscale(40%) brightness(200%);
+      }
+
+      img.is-loaded {
+        filter: none;
       }
       video {
         width: 100%;
@@ -156,7 +172,14 @@
             <img
               alt="A view from a mountain hillside"
               class="main"
-              data-sizes="(max-width: 400px) 360px, (max-width: 800px) 768px, (max-width: 1400px) 1366px, (max-width: 2000px) 1920px, (max-width: 2800px) 2560px"
+              srcset="
+                /bukollen1@0.5x.svg  360w,
+                /bukollen1@1x.svg    768w,
+                /bukollen1@2x.svg   1366w,
+                /bukollen1@3x.svg   1920w,
+                /bukollen1@4x.svg   2560w
+              "
+              sizes="(max-width: 400px) 360px, (max-width: 800px) 768px, (max-width: 1400px) 1366px, (max-width: 2000px) 1920px, (max-width: 2800px) 2560px"
               src="/bukollen1.svg"
             />
             <figcaption>
@@ -210,10 +233,13 @@
       
     </div>
     <script>
+      document.querySelector('html').classList.add('js');
       window.addEventListener('load', event => {
         console.log('page is fully loaded');
 
         const img = document.querySelector('img.main');
+
+        img.classList.add('is-loading');
 
         var html = document.documentElement;
         var fonts = document.createElement('link');
@@ -241,10 +267,13 @@
           } else {
             img.setAttribute('srcset', datasrcset4g);
           }
-          img.setAttribute('sizes', img.getAttribute('data-sizes'));
+
+          img.onload = () => {
+            img.classList.remove('is-loading');
+            img.classList.add('is-loaded');
+          };
         } else {
           img.setAttribute('srcset', datasrcset4g);
-          img.setAttribute('sizes', img.getAttribute('data-sizes'));
         }
 
         const imageObserver = new IntersectionObserver((entries, imgObserver) => {
