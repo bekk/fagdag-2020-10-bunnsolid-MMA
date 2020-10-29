@@ -173,19 +173,7 @@
       <div class="block dark">
         <div class="container">
           <figure>
-            <img
-              alt="A view from a mountain hillside"
-              class="main"
-              srcset="
-                /bukollen1@0.5x.svg  360w,
-                /bukollen1@1x.svg    768w,
-                /bukollen1@2x.svg   1366w,
-                /bukollen1@3x.svg   1920w,
-                /bukollen1@4x.svg   2560w
-              "
-              sizes="(max-width: 400px) 360px, (max-width: 800px) 768px, (max-width: 1400px) 1366px, (max-width: 2000px) 1920px, (max-width: 2800px) 2560px"
-              src="/bukollen1.svg"
-            />
+            <img alt="A view from a mountain hillside" class="main" src="/bukollen1.svg" />
             <figcaption>
               A beautiful view from Bukollen
             </figcaption>
@@ -222,15 +210,14 @@
           <img class="lzy_img" src="/bukollen2.svg" data-src="/bukollen2.JPG" />
         </div>
         <div style="padding: 48px 0">
-         <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
+          <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
         </div>
-        <div class="video" style="padding: 48px 0">
-        </div>
+        <div class="video" style="padding: 48px 0"></div>
 
         <div class="noVideo" style="padding: 48px 0">
           <a href="https://www.pexels.com/video/video-of-forest-1448735/">Her er en kul video av trær</a>
-          <img src="videoPoster.PNG" />
-          <a href="/video.mp4" download >Last ned video</a>
+          <img alt="A poster of the video" src="/videoPoster@0.5x.svg" />
+          <a href="/video.mp4" download>Last ned video</a>
         </div>
       </div>
     </div>
@@ -244,7 +231,7 @@
         video.setAttribute('autoplay', '');
         video.setAttribute('muted', '');
         video.setAttribute('loop', '');
-        video.setAttribute('poster', 'bukollen1.svg')
+        video.setAttribute('poster', 'bukollen1.svg');
 
         const src = document.createElement('source');
         src.setAttribute('src', 'video.mp4');
