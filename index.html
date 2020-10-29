@@ -7,10 +7,25 @@
     <meta name="robots" content="none" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
     <meta name="application-name" content="MMA" />
     <style type="text/css">
+      @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: 'Archivo Black';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/archivoblack/v10/HTxqL289NzCGg4MzN6KJ7eW6CYKF_i7y.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
       *,
       *:after,
       *:before {
@@ -24,7 +39,8 @@
         height: 100%;
         font-family: 'Roboto', sans-serif;
         font-size: 18px;
-        background-color: #d8c99b;
+        background-color: #273e47;
+        color: white
       }
       .app {
         height: 100%;
@@ -55,7 +71,7 @@
         font-weight: 200;
         width: 100%;
         display: block;
-        color: #273e47;
+        color: white;
       }
 
       img {
