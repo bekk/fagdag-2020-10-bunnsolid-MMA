@@ -110,6 +110,10 @@
         filter: blur(0) grayscale(40%) brightness(200%);
       }
 
+      .js .noVideo {
+        display: none;
+      }
+
       img.is-loaded {
         filter: none;
       }
@@ -218,12 +222,15 @@
           <img class="lzy_img" src="/bukollen2.svg" data-src="/bukollen2.JPG" />
         </div>
         <div style="padding: 48px 0">
-          <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
+         <img class="lzy_img" src="/bukollen3.svg" data-src="/bukollen3.JPG" />
         </div>
-        <div style="padding: 48px 0">
-          <video playsinline autoplay muted loop poser="bukollen1.sv">
-            <source src="video.mp4" type="video/mp4" />
-          </video>
+        <div class="video" style="padding: 48px 0">
+        </div>
+
+        <div class="noVideo" style="padding: 48px 0">
+          <a href="https://www.pexels.com/video/video-of-forest-1448735/">Her er en kul video av trær</a>
+          <img src="videoPoster.PNG" />
+          <a href="/video.mp4" download >Last ned video</a>
         </div>
       </div>
     </div>
@@ -231,6 +238,20 @@
       document.querySelector('html').classList.add('js');
       window.addEventListener('load', event => {
         console.log('page is fully loaded');
+
+        const video = document.createElement('video');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('loop', '');
+        video.setAttribute('poster', 'bukollen1.svg')
+
+        const src = document.createElement('source');
+        src.setAttribute('src', 'video.mp4');
+        src.setAttribute('type', 'video/mp4');
+
+        video.appendChild(src);
+        document.querySelector('.video').appendChild(video);
 
         const img = document.querySelector('img.main');
 
