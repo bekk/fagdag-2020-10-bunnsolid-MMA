@@ -38,7 +38,7 @@
         font-family: Roboto, sans-serif;
         font-weight: 300;
         font-size: 18px;
-        background-color: #1F363D;
+        background-color: #1f363d;
         color: white;
       }
 
@@ -59,12 +59,12 @@
         color: #d8c99b;
       }
       .block.dark {
-        background-color: #70A9A1;
+        background-color: #70a9a1;
         background-color: #d8973c;
         color: #273e47;
       }
       .block.darker {
-        background-color: #40798C;
+        background-color: #40798c;
       }
       .container {
         width: 70vw;
@@ -118,7 +118,7 @@
         width: 100%;
       }
       button {
-        background-color: #40798C;
+        background-color: #40798c;
         padding: 0 1rem;
         height: 2rem;
         color: white;
@@ -127,13 +127,13 @@
       }
 
       .darker button {
-        background-color: #CFE0C3;
+        background-color: #cfe0c3;
         color: black;
       }
 
       button.secondary {
         background-color: transparent;
-        border-color: #40798C;
+        border-color: #40798c;
       }
 
       a:visited,
@@ -144,11 +144,11 @@
       }
 
       a:hover {
-        color: #1F363D;
+        color: #1f363d;
       }
 
       .darker a {
-        color: #CFE0C3;
+        color: #cfe0c3;
       }
       .block.dark a {
         color: #a4243b;
@@ -224,10 +224,9 @@
           </div>
           <div>
             <video controls autoplay="true" preload="auto" loop="true">
-              <source src="video.mp4" type="video/mp4">
+              <source src="video.mp4" type="video/mp4" />
             </video>
           </div>
-          
         </div>
       </div>
     </div>
@@ -281,6 +280,10 @@
               const lazyImage = entry.target;
               console.log('lazy loading ', lazyImage);
               lazyImage.src = lazyImage.dataset.src;
+              lazyImage.onload = () => {
+                lazyImage.classList.remove('is-loading');
+                lazyImage.classList.add('is-loaded');
+              };
             }
           });
         });
