@@ -1,0 +1,8 @@
+{
+  "name": "MMA",
+  "short_name": "mma",
+  "start_url": "/",
+  "background_color": "#D8973C",
+  "theme_color": "#273e47",
+  "display": "minimal-ui"
+}
